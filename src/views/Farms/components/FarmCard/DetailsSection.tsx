@@ -52,12 +52,13 @@ const DetailsSection: React.FC<ExpandableSectionProps> = ({
     <Wrapper>
       <Flex justifyContent="space-between">
         <Text>{TranslateString(316, 'Stake')}:</Text>
-        <StyledLinkExternal href={
-          isTokenOnly ?
-            `https://exchange.duck.money/#/swap/${tokenAddresses[process.env.REACT_APP_CHAIN_ID]}`
-            :
-          `https://exchange.duck.money/#/add/${liquidityUrlPathParts}`
-        }>
+        <StyledLinkExternal
+          href={
+            isTokenOnly
+              ? `https://exchange.duck.money/#/swap/${tokenAddresses[process.env.REACT_APP_CHAIN_ID]}`
+              : `https://exchange.duck.money/#/add/${liquidityUrlPathParts}`
+          }
+        >
           {lpLabel}
         </StyledLinkExternal>
       </Flex>
