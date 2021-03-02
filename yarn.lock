@@ -1885,9 +1885,8 @@
     eslint-plugin-react "^7.21.5"
     eslint-plugin-react-hooks "^4.0.0"
 
-"@pancakeswap-libs/uikit@duckmon/uikit#master":
+"@pancakeswap-libs/uikit@file:../uikit-dist":
   version "0.10.2"
-  resolved "https://codeload.github.com/duckmon/uikit/tar.gz/bcb64cb836bfa48bd1a44416fe376df86d61b98c"
   dependencies:
     "@types/lodash" "^4.14.162"
     "@types/styled-system" "^5.1.10"
