@@ -72,6 +72,10 @@ const config: MenuEntry[] = [
     icon: 'MoreIcon',
     items: [
       {
+        label: 'Documentation',
+        href: 'https://docs.duck.money',
+      },
+      {
         label: 'Github',
         href: 'https://github.com/duckmon',
       },
