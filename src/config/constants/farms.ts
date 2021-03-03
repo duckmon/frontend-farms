@@ -8,12 +8,12 @@ const farms: FarmConfig[] = [
     lpSymbol: 'QUACK-BUSD LP',
     lpAddresses: {
       97: '',
-      56: '0x1b96b92314c44b159149f7e0303511fb2fc4774f',
+      56: '0x7ead68f333984b73fe85b4e7ad551779538631f5',
     },
     tokenSymbol: 'QUACK',
     tokenAddresses: {
       97: '',
-      56: '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
+      56: '0xBe2Aa50783c59b29D397Ad45F6b6069aC139124F',
     },
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
@@ -24,12 +24,12 @@ const farms: FarmConfig[] = [
     lpSymbol: 'QUACK-BNB LP',
     lpAddresses: {
       97: '',
-      56: '0x1b96b92314c44b159149f7e0303511fb2fc4774f',
+      56: '0x04be4826c60929819525e6fdd0a13c8bd8d20853',
     },
     tokenSymbol: 'QUACK',
     tokenAddresses: {
       97: '',
-      56: '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
+      56: '0xBe2Aa50783c59b29D397Ad45F6b6069aC139124F',
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
