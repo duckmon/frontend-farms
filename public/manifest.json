@@ -1,11 +1,11 @@
 {
-  "short_name": "Duck Money",
-  "name": "Duck Money",
-  "description": "Farm QUACK with LP Tokens",
+  "short_name": "Duck.Money",
+  "name": "🦆 Duck.Money - A quacking blast on Binance Smart Chain (BSC)",
+  "description": "DeFi is like a hurricane here at Duck Money. Tokens, Farming, Pool Rewards – it’s a duck blur.",
   "icons": [
     {
       "src": "favicon.ico",
-      "type": "image/x-icon",
+      "type": "image/png",
       "sizes": "256x256"
     }
   ],
