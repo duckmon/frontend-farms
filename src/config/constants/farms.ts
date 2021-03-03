@@ -164,8 +164,6 @@ const farms: FarmConfig[] = [
   //   quoteTokenAdresses: contracts.busd,
   // },
 
-
-
   // {
   //   pid: 11,
   //   risk: 5,
@@ -333,7 +331,6 @@ const farms: FarmConfig[] = [
   //   quoteTokenSymbol: QuoteToken.BUSD,
   //   quoteTokenAdresses: contracts.busd,
   // },
-  
 ]
 
 export default farms
