@@ -71,9 +71,9 @@ const FarmedStakingCard = () => {
         <Heading size="xl" mb="24px">
           {TranslateString(542, 'Farms & Staking')}
         </Heading>
-        <Heading size="lg" mb="24px" color="primary">
+        {/* <Heading size="lg" mb="24px" color="primary">
           <a rel="noreferrer" href="https://bscscan.com/block/countdown/5397352" target="_blank">⏲ Countdown to Start</a>
-        </Heading>
+        </Heading> */}
         <CardImage src="/images/egg/2.png" alt="cake logo" width={64} height={64} />
         <Block>
           <Label>{TranslateString(544, 'QUACK to Harvest')}</Label>

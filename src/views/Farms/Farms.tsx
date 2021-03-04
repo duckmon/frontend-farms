@@ -57,12 +57,9 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
         // if (!farm.tokenAmount || !farm.lpTotalInQuoteToken || !farm.lpTotalInQuoteToken) {
         //   return farm
         // }
-        let cakeRewardPerBlock = new BigNumber(farm.duckPerBlock || 1)
+        const cakeRewardPerBlock = new BigNumber(farm.duckPerBlock || 1)
           .times(new BigNumber(farm.poolWeight))
-
-        if (farm.duckPerBlock >= new BigNumber(10).pow(18)) {
-          cakeRewardPerBlock = cakeRewardPerBlock.div(new BigNumber(10).pow(18))
-        }
+          .div(new BigNumber(10).pow(18))
 
         const cakeRewardPerYear = cakeRewardPerBlock.times(BLOCKS_PER_YEAR)
 
