@@ -3,17 +3,17 @@ import { FarmConfig, QuoteToken } from './types'
 
 const farms: FarmConfig[] = [
   {
-    pid: 20,
+    pid: 0,
     risk: 5,
     lpSymbol: 'QUACK-BUSD LP',
     lpAddresses: {
       97: '',
-      56: '0x19c8f9570a342268abe2bf868617cdd7730b6abe',
+      56: '0x3b375d727f3a16359919494f7bb02479c96c0a7e',
     },
     tokenSymbol: 'QUACK',
     tokenAddresses: {
       97: '',
-      56: '0xBe2Aa50783c59b29D397Ad45F6b6069aC139124F',
+      56: '0x91918f3EC1F030E2b1Bd2B3aaEcF6760d46258d9',
     },
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
@@ -24,12 +24,12 @@ const farms: FarmConfig[] = [
     lpSymbol: 'QUACK-BNB LP',
     lpAddresses: {
       97: '',
-      56: '0x04be4826c60929819525e6fdd0a13c8bd8d20853',
+      56: '0x238f961f283edf7ae5173b923ec402473712af5a',
     },
     tokenSymbol: 'QUACK',
     tokenAddresses: {
       97: '',
-      56: '0xBe2Aa50783c59b29D397Ad45F6b6069aC139124F',
+      56: '0x91918f3EC1F030E2b1Bd2B3aaEcF6760d46258d9',
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
@@ -171,7 +171,7 @@ const farms: FarmConfig[] = [
     lpSymbol: 'QUACK',
     lpAddresses: {
       97: '',
-      56: '0x19c8f9570a342268abe2bf868617cdd7730b6abe',
+      56: '0x3b375d727f3a16359919494f7bb02479c96c0a7e',
     },
     tokenSymbol: 'QUACK',
     tokenAddresses: contracts.cake,
