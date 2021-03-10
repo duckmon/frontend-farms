@@ -30,6 +30,11 @@ const config: MenuEntry[] = [
     icon: 'PoolIcon',
     href: '/moneybin',
   },
+  {
+    label: 'Money Wheel',
+    icon: 'MoneyWheelIcon',
+    href: '/moneywheel',
+  },
   // {
   //   label: 'Pools',
   //   icon: 'PoolIcon',

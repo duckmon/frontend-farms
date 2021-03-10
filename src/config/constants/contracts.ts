@@ -11,6 +11,9 @@ export default {
     56: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
     97: '',
   },
+  wheel: {
+    56: '0x3e0e5eBC9e5014b8d89526Ba550C220298362b26',
+  },
   lottery: {
     56: '',
     97: '',
