@@ -21,7 +21,7 @@ const wheelOptions = [
   { option: '1' },
   { option: '20' },
   { option: '1' },
-  
+
   { option: '3' },
   { option: '1' },
   { option: '3' },
@@ -97,10 +97,10 @@ interface WheelCardProps {
   onStopping: () => void
 }
 
-const WheelCard: React.FC<WheelCardProps> = ({prizeNumber, mustSpin, onStopping}) => {
-    const onPerpendicularText = true  
+const WheelCard: React.FC<WheelCardProps> = ({ prizeNumber, mustSpin, onStopping }) => {
+  const onPerpendicularText = true
 
-    return (
+  return (
     <Card>
       <CardBody>
         <CardHeading>
@@ -112,22 +112,23 @@ const WheelCard: React.FC<WheelCardProps> = ({prizeNumber, mustSpin, onStopping}
         </CardHeading>
       </CardBody>
       <ExpandingWrapper showFooter={false}>
-        <CardFooter style={{padding: 0}}>
-        <Wheel
-          mustStartSpinning={mustSpin}
-          prizeNumber={prizeNumber}
-          data={wheelOptions}
-          backgroundColors={['#3e3e3e', '#df3428']}
-          textColors={['#ffffff']}
-          innerRadius={25}
-          radiusLineWidth={1}
-          perpendicularText={onPerpendicularText}
-          textDistance={80}
-          onStopSpinning={onStopping}/>
+        <CardFooter style={{ padding: 0 }}>
+          <Wheel
+            mustStartSpinning={mustSpin}
+            prizeNumber={prizeNumber}
+            data={wheelOptions}
+            backgroundColors={['#3e3e3e', '#df3428']}
+            textColors={['#ffffff']}
+            innerRadius={25}
+            radiusLineWidth={1}
+            perpendicularText={onPerpendicularText}
+            textDistance={80}
+            onStopSpinning={onStopping}
+          />
         </CardFooter>
       </ExpandingWrapper>
     </Card>
-    )
+  )
 }
 
 export default WheelCard

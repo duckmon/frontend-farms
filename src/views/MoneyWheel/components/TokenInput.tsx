@@ -13,7 +13,15 @@ interface TokenInputProps extends InputProps {
   name?: string
 }
 
-const TokenInput: React.FC<TokenInputProps> = ({ max, symbol, onChange, onSelectMax, value, name, depositFeeBP = 0 }) => {
+const TokenInput: React.FC<TokenInputProps> = ({
+  max,
+  symbol,
+  onChange,
+  onSelectMax,
+  value,
+  name,
+  depositFeeBP = 0,
+}) => {
   const TranslateString = useI18n()
   return (
     <StyledTokenInput>
