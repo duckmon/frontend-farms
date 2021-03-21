@@ -13,6 +13,7 @@ export default {
   },
   wheel: {
     56: '0x3e0e5eBC9e5014b8d89526Ba550C220298362b26',
+    97: '',
   },
   lottery: {
     56: '',

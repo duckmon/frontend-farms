@@ -7,13 +7,15 @@ export interface InputProps {
   placeholder?: string
   startAdornment?: React.ReactNode
   value: string
+  name?: string
+  type?: string
 }
 
-const Input: React.FC<InputProps> = ({ endAdornment, onChange, placeholder, startAdornment, value }) => {
+const Input: React.FC<InputProps> = ({ endAdornment, onChange, placeholder, startAdornment, value, name, type }) => {
   return (
     <StyledInputWrapper>
       {!!startAdornment && startAdornment}
-      <StyledInput placeholder={placeholder} value={value} onChange={onChange} />
+      <StyledInput placeholder={placeholder} value={value} onChange={onChange} name={name} type={type} />
       {!!endAdornment && endAdornment}
     </StyledInputWrapper>
   )

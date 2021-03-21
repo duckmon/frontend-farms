@@ -19,6 +19,19 @@ export interface Ifo {
   releaseBlockNumber: number
 }
 
+export interface MoneyWheelBet {
+  val1: string
+  val3: string
+  val5: string
+  val10: string
+  val20: string
+  val50: string
+}
+
+// export interface LastMoneyWheelResult {
+
+// }
+
 export enum QuoteToken {
   'BNB' = 'BNB',
   'CAKE' = 'CAKE',

@@ -1,10 +1,10 @@
 import React, { useMemo, useCallback, useState } from 'react'
 import BigNumber from 'bignumber.js'
 import styled, { keyframes } from 'styled-components'
-import TokenInput from 'components/TokenInput'
 import { Flex, Text, Skeleton, Image, Heading } from '@pancakeswap-libs/uikit'
 import { provider } from 'web3-core'
 import { getFullDisplayBalance } from 'utils/formatBalance'
+import TokenInput from './TokenInput'
 import Input, { InputProps } from '../../../components/Input'
 
 const FlexShow = styled.div`
@@ -16,12 +16,13 @@ const FlexShow = styled.div`
 interface BetInputProps extends InputProps {
     max: number | string
     symbol: string
-    onSelectMax?: () => void
+    onSelectMax?: (evt) => void
     depositFeeBP?: number
     betNumber: string
+    name?: string
   }
 
-const BetInput: React.FC<BetInputProps> = ({ max, symbol, onChange, onSelectMax, value, depositFeeBP = 0, betNumber}) => {
+const BetInput: React.FC<BetInputProps> = ({ max, symbol, onChange, onSelectMax, value, name, depositFeeBP = 0, betNumber}) => {
     return (
         <FlexShow>
             <Heading as="h2" size="xl" color="secondary" mb="24px" style={{ textAlign: 'center' }}>
@@ -33,6 +34,7 @@ const BetInput: React.FC<BetInputProps> = ({ max, symbol, onChange, onSelectMax,
                 value={value}
                 max={max}
                 symbol={symbol}
+                name={name}
             />
         </FlexShow>
         

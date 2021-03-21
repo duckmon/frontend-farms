@@ -1,56 +1,65 @@
-import React, { useEffect, useCallback, useState } from 'react'
-import { Route, useRouteMatch } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import React, {useState} from 'react'
+import styled from 'styled-components'
+import { BaseLayout  } from '@pancakeswap-libs/uikit'
 import BigNumber from 'bignumber.js'
-import { useWallet } from '@binance-chain/bsc-use-wallet'
-import { provider } from 'web3-core'
-import { Image, Heading } from '@pancakeswap-libs/uikit'
-import { BLOCKS_PER_YEAR, CAKE_PER_BLOCK, CAKE_POOL_PID } from 'config'
-import FlexLayout from 'components/layout/Flex'
 import Page from 'components/layout/Page'
-import { useFarms, usePriceBnbBusd, usePriceCakeBusd } from 'state/hooks'
-import useRefresh from 'hooks/useRefresh'
-import { fetchFarmUserDataAsync } from 'state/actions'
-import { QuoteToken } from 'config/constants/types'
-import useI18n from 'hooks/useI18n'
 import useTokenBalance from 'hooks/useTokenBalance'
-import { getBalanceNumber } from '../../utils/formatBalance'
 import { getCakeAddress } from '../../utils/addressHelpers'
-import Game from './components/Game'
+import Hero from './components/Hero'
+import WheelCard from './components/WheelCard'
+import BetCard from './components/BetCard'
 
 
-const Farms: React.FC = () => {
-  const { path } = useRouteMatch()
-  const cakePrice = usePriceCakeBusd()
-  const bnbPrice = usePriceBnbBusd()
-  const { account, ethereum }: { account: string; ethereum: provider } = useWallet()
-  const cakeBalance = (useTokenBalance(getCakeAddress()))
+const Cards = styled(BaseLayout)`
+  align-items: start;
+  margin-bottom: 32px;
 
-  const dispatch = useDispatch()
-  const { fastRefresh } = useRefresh()
-  useEffect(() => {
-    if (account) {
-      dispatch(fetchFarmUserDataAsync(account))
+  & > div {
+    grid-column: span 6;
+  }
+
+  ${({ theme }) => theme.mediaQueries.sm} {
+    & > div {
+      grid-column: span 12;
     }
-  }, [account, dispatch, fastRefresh])
+  }
 
+  ${({ theme }) => theme.mediaQueries.lg} {
+    & > div {
+      grid-column: span 6;
+    }
+  }
+`
 
+const MoneyWheel: React.FC = () => {
+  const cakeBalance = (useTokenBalance(getCakeAddress()))
+  const [mustSpin, setMustSpin] = useState(false);
+  const [prizeNumber, setPrizeNumber] = useState(0);
 
+  const onResult = (lastResult: any) => {
+    setPrizeNumber(lastResult.spin)
+    setMustSpin(true)
+  }
+
+  const onStopping = () => {
+    setMustSpin(false)
+  }
+  
   return (
-    <Page>
-      <Heading as="h1" size="lg" color="primary" mb="50px" style={{ textAlign: 'center' }}>
-        Spin the Wheel and WIN!
-      </Heading>
-      
-      <div>
-        
-        <Game max={new BigNumber(cakeBalance)} tokenName="QUACK" />
-          
-        
-      </div>
-      <Image src="/images/egg/8.png" alt="illustration" width={1352} height={587} responsive />
-    </Page>
+    <div>
+      <Hero />
+      <Page>
+        <Cards>
+            <div>
+              <WheelCard prizeNumber={prizeNumber} mustSpin={mustSpin} onStopping={onStopping}/>
+            </div>
+            <div>
+              <BetCard max={new BigNumber(cakeBalance)} tokenName="QUACK" onResult={onResult}/>
+            </div>
+          </Cards>
+      </Page>
+    </div>
   )
 }
 
-export default Farms
+export default MoneyWheel
